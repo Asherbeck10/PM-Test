@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-r from-[#A30000] to-[#ED1D25] text-white">
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-28">
+    <section className="relative w-full overflow-hidden bg-linear-to-r from-[#A30000] to-[#ED1D25] text-white">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-24">
         {/* LEFT SIDE */}
         <div className="max-w-[540px] space-y-6">
           <h1 className="text-[64px] leading-[1.1] font-bold">
@@ -30,12 +30,20 @@ export default function Hero() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="relative">
-          <img
-            src="/phone-mock.png"
-            alt="Trading App Preview"
-            className="w-[560px] translate-y-6"
-          />
+        <div className="relative flex flex-1 justify-end">
+          <div className="relative h-[740px] w-[820px]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_35%_45%,rgba(255,255,255,0.08),transparent_55%)]" />
+            <img
+              src="images/hero/Iphone Image.png"
+              alt="Trading App Preview"
+              className="absolute bottom-[-220px] left-24 w-[540px] drop-shadow-[0_40px_90px_rgba(0,0,0,0.48)]"
+            />
+            <img
+              src="images/hero/iPhone mockup.png"
+              alt="Trading App UI"
+              className="absolute -right-6 bottom-[-210px] z-10 w-[420px] drop-shadow-[0_45px_90px_rgba(0,0,0,0.55)]"
+            />
+          </div>
         </div>
       </div>
     </section>
