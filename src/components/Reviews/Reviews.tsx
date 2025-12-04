@@ -118,7 +118,7 @@ export default function Reviews() {
           {visible.map((r, idx) => (
             <div
               key={idx}
-              className="rounded-[16px] border border-gray-200 bg-white p-6 text-left shadow-sm"
+              className="rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm"
             >
               <p className="mb-6 text-[15px] leading-[1.6] text-gray-700">{r.text}</p>
 
@@ -130,7 +130,7 @@ export default function Reviews() {
                   <span className="text-[16px] font-semibold">{r.name}</span>
                 </div>
 
-                <img src={r.icon} className="w-[20px]" alt="" />
+                <img src={r.icon} className="w-5" alt="" />
               </div>
             </div>
           ))}
