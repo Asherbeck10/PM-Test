@@ -107,7 +107,7 @@ export default function Services() {
                   className="flex items-center justify-between rounded-xl bg-white p-4 shadow"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="h-[36px] w-[36px] rounded-full bg-gray-200" />
+                    <div className="h-9 w-9 rounded-full bg-gray-200" />
                     <div>
                       <div className="font-semibold text-black">{item}</div>
                       <div className="text-sm text-gray-500">
@@ -123,7 +123,7 @@ export default function Services() {
 
             {/* RIGHT CHART AREA */}
             <div className="rounded-2xl bg-white p-6 shadow">
-              <div className="h-[300px] w-full rounded-xl border border-[#ED1D25]/20 bg-gradient-to-b from-[#FED6D6] to-[#FFFFFF]">
+              <div className="h-[300px] w-full rounded-xl border border-[#ED1D25]/20 bg-linear-to-b from-[#FED6D6] to-[#FFFFFF]">
                 {/* Chart Placeholder */}
                 <div className="pt-[130px] text-center text-gray-400">(Chart Placeholder)</div>
               </div>
