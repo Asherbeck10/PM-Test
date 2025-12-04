@@ -1,6 +1,6 @@
 export default function AccessMarkets() {
   return (
-    <section className="w-full bg-gradient-to-b from-[#4A0000] via-[#7A0000] to-[#2B0000] py-28 text-white">
+    <section className="w-full bg-linear-to-b from-[#4A0000] via-[#7A0000] to-[#2B0000] py-28 text-white">
       <div className="mx-auto max-w-[1440px] px-8 text-center">
         {/* TITLE */}
         <h2 className="text-[52px] leading-tight font-bold">
@@ -24,7 +24,7 @@ export default function AccessMarkets() {
         <div className="mt-16 grid grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-4">
           <MarketCard
             title="Forex"
-            icon="💱"
+            icon="/icons/accessMarkets/Coin.png"
             text="Trade the world’s largest financial market. Access deep liquidity,
               tight spreads, and constant opportunity across major and minor
               currency pairs."
@@ -32,14 +32,14 @@ export default function AccessMarkets() {
 
           <MarketCard
             title="Stocks"
-            icon="📈"
+            icon="/icons/AccessMarkets/Graph Ascend.png"
             text="From Wall Street to global tech leaders, follow major companies and
               react to market moves in real time."
           />
 
           <MarketCard
             title="Indices"
-            icon="📉"
+            icon="/icons/accessMarkets/Analytics Pie.png"
             text="Trade global indices with competitive spreads, precise execution,
               and deep liquidity."
             highlight
@@ -47,7 +47,7 @@ export default function AccessMarkets() {
 
           <MarketCard
             title="Commodities"
-            icon="🌎"
+            icon="/icons/accessMarkets/Earth.png"
             text="Tap into global resource demand by trading oil, gas, metals,
               and agricultural markets."
           />
@@ -69,36 +69,45 @@ function FeatureBadge({ icon, text }: { icon: string; text: string }) {
 
 /* MARKET CARD */
 function MarketCard({
+  src,
   icon,
   title,
   text,
   highlight,
 }: {
-  icon: string;
+  src?: string;
+  icon?: string;
   title: string;
   text: string;
   highlight?: boolean;
 }) {
+  const iconSrc = icon || src;
+
   return (
     <div
-      className={`rounded-[32px] border-2 bg-white p-8 text-black shadow-xl ${
-        highlight ? "border-[#ED1D25]" : "border-transparent"
-      }`}
+      className={`group rounded-4xl border-2 bg-white p-8 text-black shadow-xl transition-all duration-300 ease-out ${highlight ? "border-[#ED1D25]" : "border-transparent"} hover:z-20 hover:scale-[1.04] hover:shadow-2xl`}
+      style={{
+        cursor: `url('/images/accessMarkets/216.png') 16 16, pointer`,
+      }}
     >
       {/* Icon */}
-      <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-gradient-to-b from-[#FF8E8E] to-[#ED1D25] shadow-lg">
-        <span className="text-3xl text-white">{icon}</span>
+      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-b from-[#FF8E8E] to-[#ED1D25] shadow-lg">
+        {iconSrc ? (
+          <img src={iconSrc} alt={`${title} icon`} className="h-10 w-10 object-contain" />
+        ) : (
+          <span className="text-3xl text-white">{title.slice(0, 1)}</span>
+        )}
       </div>
 
       <h3 className="mt-6 text-[22px] font-semibold">{title}</h3>
 
-      <div className="my-4 h-[1px] bg-gray-300"></div>
+      <div className="my-4 h-px bg-gray-300"></div>
 
       <p className="text-[15px] leading-[1.6] text-gray-700">{text}</p>
 
       {/* Arrow Button */}
       <div className="mt-6 flex justify-end">
-        <button className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-gray-200 transition hover:bg-gray-300">
+        <button className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 transition hover:bg-gray-300">
           ➜
         </button>
       </div>

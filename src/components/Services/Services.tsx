@@ -1,7 +1,7 @@
 export default function Services() {
   return (
     <section className="w-full bg-white py-28">
-      <div className="mx-auto max-w-[1440px] px-8">
+      <div className="mx-auto max-w-[1440px] px-24">
         {/* ----------------------------- */}
         {/* PART 1: JOIN 50,000+ TRADERS */}
         {/* ----------------------------- */}
@@ -39,18 +39,36 @@ export default function Services() {
         {/* ----------------------------- */}
         {/* PART 2: RED PROMO BANNER */}
         {/* ----------------------------- */}
-        <div className="relative mb-28 flex h-[250px] items-center overflow-hidden rounded-[24px] bg-gradient-to-r from-[#A30000] to-[#ED1D25] px-12">
-          {/* LEFT IMAGE */}
-          <img src="/trader.png" className="absolute bottom-0 left-0 h-full object-cover" alt="" />
+        <div className="relative mb-28 w-full overflow-visible rounded-3xl">
+          {/* Background gradient */}
+          <div className="absolute inset-0 h-[250px] rounded-3xl bg-linear-to-r from-[#A30000] via-[#C60000] to-[#ED1D25]" />
 
-          {/* TEXT RIGHT */}
-          <div className="ml-auto max-w-[500px] pr-4 text-right text-white">
-            <h3 className="text-[32px] leading-tight font-semibold">
-              Everything you need to <br /> trade the markets
-            </h3>
-            <button className="mt-6 rounded-full border border-white bg-white/20 px-8 py-3 font-medium">
-              Explore Accounts
-            </button>
+          {/* Full-height coins (behind everything) */}
+          <img
+            src="/images/services/image 195.png"
+            alt="Coins"
+            className="object-center-left pointer-events-none absolute inset-0 z-1 h-[250px] w-auto translate-x-10 object-cover select-none"
+          />
+
+          {/* Man image — hand breaks out of the banner */}
+          <img
+            src="/images/services/image 1 94.png"
+            alt="Trader"
+            className="pointer-events-none absolute top-[-100px] left-20 z-3 h-[350px]"
+          />
+
+          {/* Right side text */}
+          <div className="relative z-5 flex h-[250px] w-full items-center justify-end pr-24">
+            <div className="max-w-[430px] text-right text-white">
+              <h3 className="text-[32px] leading-tight font-semibold drop-shadow-[0_4px_14px_rgba(0,0,0,0.4)]">
+                Everything you need to <br />
+                trade the markets
+              </h3>
+
+              <button className="mt-6 rounded-full border border-white/30 bg-linear-to-b from-[#5A0000] to-[#9E0000] px-9 py-3 font-medium shadow-[0_0_20px_rgba(255,80,80,0.45)] transition hover:brightness-110">
+                Explore Accounts
+              </button>
+            </div>
           </div>
         </div>
 
