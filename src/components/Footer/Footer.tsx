@@ -8,7 +8,7 @@ export default function Footer() {
         <img src="/icons/footer/payPal.png" className="h-10 opacity-80" />
         <img src="/icons/footer/masterCard.png" className="h-10 opacity-80" />
         <img src="/icons/footer/Skrill.png" className="h-10 opacity-80" />
-        <img src="public/icons/footer/ Pay.png" className="h-10 opacity-80" />
+        <img src="/icons/footer/ Pay.png" className="h-10 opacity-80" />
         <img src="/icons/footer/Visa.png" className="h-10 opacity-80" />
       </div>
 
