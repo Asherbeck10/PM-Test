@@ -173,11 +173,20 @@ export default function Services() {
                       Browse all markets
                     </span>
 
-                    <img
-                      src="/images/services/arrow-right.png"
-                      alt="arrow"
-                      className="h-3 w-auto opacity-80 transition-transform group-hover:translate-x-1"
-                    />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="h-3 w-3 opacity-80 transition-transform group-hover:translate-x-1"
+                    >
+                      <path
+                        d="M4 8h8m0 0L9.5 5.5M12 8 9.5 10.5"
+                        stroke="#ED1D25"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
