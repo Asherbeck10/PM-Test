@@ -10,16 +10,16 @@ export default function Updates() {
           </h2>
         </div>
 
-        <button className="flex items-center gap-2 text-[16px] font-semibold text-[#ED1D25]">
+        <span className="flex cursor-default items-center gap-2 text-[16px] font-semibold text-[#ED4A4A]">
           View all <span className="text-xl">›</span>
-        </button>
+        </span>
       </div>
 
       {/* GRID */}
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 md:grid-cols-3">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 md:auto-rows-[1fr] md:grid-cols-3">
         {/* LEFT NEWS CARD */}
-        <div className="overflow-hidden rounded-[24px] border border-gray-100 bg-white shadow-lg">
-          <img src="/updates/news1.jpg" className="h-[240px] w-full object-cover" alt="" />
+        <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-lg">
+          <img src="/images/updates/media.png" className="h-60 w-full object-cover" alt="" />
 
           <div className="p-6">
             <p className="mb-2 text-[14px] text-gray-400">03 October 2025</p>
@@ -38,19 +38,22 @@ export default function Updates() {
         </div>
 
         {/* VIDEO MIDDLE CARD */}
-        <div className="md:col-span-2">
-          <div className="relative overflow-hidden rounded-[24px] shadow-xl">
+        <div className="md:col-span-2 md:h-full">
+          <div className="relative h-full overflow-hidden rounded-3xl shadow-xl">
             <img
-              src="/updates/video-thumbnail.jpg"
-              className="h-[340px] w-full object-cover brightness-75"
+              src="/images/updates/unsplash_Ju9DbmVFcAo.png"
+              className="h-full min-h-[340px] w-full object-cover brightness-75"
               alt=""
             />
 
             {/* Play Button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="flex h-[80px] w-[80px] items-center justify-center rounded-full bg-[#ED1D25] shadow-xl">
-                <span className="text-4xl text-white">▶</span>
-              </button>
+            <div
+              className="absolute inset-0 flex cursor-default items-center justify-center"
+              aria-label="Play video"
+            >
+              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-[#F25A5A] text-4xl text-white shadow-xl">
+                ▶
+              </span>
             </div>
           </div>
         </div>
@@ -58,10 +61,10 @@ export default function Updates() {
 
       {/* FEATURED ARTICLE CARD */}
       <div className="mx-auto mt-12 max-w-[1440px]">
-        <div className="relative overflow-hidden rounded-[24px] bg-black shadow-xl">
+        <div className="relative overflow-hidden rounded-3xl bg-black shadow-xl">
           {/* Background image */}
           <img
-            src="/updates/bkp-bg.jpg"
+            src="/images/updates/cover.png"
             className="absolute inset-0 h-full w-full object-cover opacity-30"
             alt=""
           />

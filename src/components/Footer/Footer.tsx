@@ -1,13 +1,15 @@
+import type { ReactNode } from "react";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#000000] pt-10 text-white">
       {/* TOP PAYMENT PROVIDERS BAR */}
       <div className="flex items-center justify-center gap-16 border-b border-white/10 py-10">
-        <img src="/logos/paypal.svg" className="h-10 opacity-80" />
-        <img src="/logos/mastercard.svg" className="h-10 opacity-80" />
-        <img src="/logos/skrill.svg" className="h-10 opacity-80" />
-        <img src="/logos/applepay.svg" className="h-10 opacity-80" />
-        <img src="/logos/visa.svg" className="h-10 opacity-80" />
+        <img src="/icons/footer/payPal.png" className="h-10 opacity-80" />
+        <img src="/icons/footer/masterCard.png" className="h-10 opacity-80" />
+        <img src="/icons/footer/Skrill.png" className="h-10 opacity-80" />
+        <img src="public/icons/footer/ Pay.png" className="h-10 opacity-80" />
+        <img src="/icons/footer/Visa.png" className="h-10 opacity-80" />
       </div>
 
       {/* MAIN FOOTER */}
@@ -25,11 +27,29 @@ export default function Footer() {
 
           {/* SOCIAL ICONS */}
           <div className="flex items-center gap-4 pt-4">
-            <Social icon="facebook" />
-            <Social icon="linkedin" />
-            <Social icon="instagram" />
-            <Social icon="youtube" />
-            <Social icon="twitter" />
+            <Social
+              icon={
+                <img src="/icons/footer/Social_icon01.png" className="h-10 w-10" alt="FaceBook" />
+              }
+            />
+            <Social
+              icon={
+                <img src="/icons/footer/Social_icon02.png" className="h-10 w-10" alt="Linkedin" />
+              }
+            />
+            <Social
+              icon={
+                <img src="/icons/footer/Social_icon03.png" className="h-10 w-10" alt="Instagram" />
+              }
+            />
+            <Social
+              icon={
+                <img src="/icons/footer/Social_icon04.png" className="h-10 w-10" alt="Youtube" />
+              }
+            />
+            <Social
+              icon={<img src="/icons/footer/Social_icon05.png" className="h-10 w-10" alt="X" />}
+            />
           </div>
         </div>
 
@@ -95,7 +115,7 @@ function FooterTitle({ title }: { title: string }) {
   return <h4 className="mb-4 text-[18px] font-semibold">{title}</h4>;
 }
 
-function FooterLink({ children }: { children: React.ReactNode }) {
+function FooterLink({ children }: { children: ReactNode }) {
   return (
     <p className="mb-3 cursor-pointer text-[14px] text-white/70 transition hover:text-white">
       {children}
@@ -103,10 +123,10 @@ function FooterLink({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Social({ icon }: { icon: string }) {
+function Social({ icon }: { icon: ReactNode }) {
   return (
     <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20">
-      <img src={`/social/${icon}.svg`} className="h-5 w-5" />
+      {typeof icon === "string" ? <img src={`/social/${icon}.svg`} className="h-5 w-5" /> : icon}
     </div>
   );
 }
