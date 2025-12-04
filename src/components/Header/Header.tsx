@@ -38,8 +38,8 @@ export default function Navbar() {
         {/* MAIN NAV ROW */}
         <div className="flex items-center justify-between px-6 py-4">
           {/* LOGO */}
-          <div className="order-0 flex h-[45.13px] w-[160px] flex-none items-center gap-3">
-            <div className="h-[32px] w-[32px] rounded bg-[#ED1D25]" />
+          <div className="order-0 flex h-[45.13px] w-40 flex-none items-center gap-3">
+            <div className="h-8 w-8 rounded bg-[#ED1D25]" />
             <div className="leading-tight">
               <span className="block text-[20px] font-semibold">premier</span>
               <span className="block text-[20px] font-normal">markets</span>
