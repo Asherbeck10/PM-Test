@@ -15,12 +15,8 @@ export default function Reviews() {
 
         {/* ARROWS */}
         <div className="mb-20 flex items-center justify-center gap-6">
-          <button className="flex h-[42px] w-[42px] items-center justify-center rounded-full border bg-white shadow">
-            ‹
-          </button>
-          <button className="flex h-[42px] w-[42px] items-center justify-center rounded-full border bg-white shadow">
-            ›
-          </button>
+          <button className="flex h-[42px] w-[42px] items-center justify-center rounded-full border bg-white shadow"></button>
+          <button className="flex h-[42px] w-[42px] items-center justify-center rounded-full border bg-white shadow"></button>
         </div>
 
         {/* GRID OF REVIEWS */}
