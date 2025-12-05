@@ -3,6 +3,7 @@ import MarketHeaderCard from "./MarketheaderCard";
 
 export default function Services() {
   const [activeMarket, setActiveMarket] = useState<number | null>(null);
+  const [activeCta, setActiveCta] = useState<"start" | "demo" | null>(null);
 
   return (
     <section className="w-full bg-white py-28">
@@ -14,7 +15,7 @@ export default function Services() {
           {/* LEFT TEXT */}
           <div>
             <h2 className="text-[56px] leading-[1.1] font-bold text-black">
-              Join <span className="text-[#ED1D25]">50,000+</span>
+              Join <span className="text-brand">50,000+</span>
               <br />
               traders who
               <br />
@@ -30,11 +31,25 @@ export default function Services() {
             </p>
 
             <div className="flex items-center gap-6">
-              <button className="rounded-full bg-[#ED1D25] px-10 py-4 text-[16px] font-semibold text-white">
+              <button
+                className={`rounded-full px-10 py-4 text-[16px] font-semibold transition ${
+                  activeCta === "start"
+                    ? "text-brand ring-brand bg-white ring-1"
+                    : "bg-brand hover:bg-brand/90 text-white"
+                }`}
+                onClick={() => setActiveCta("start")}
+              >
                 Start Trading
               </button>
 
-              <button className="rounded-full border border-[#ED1D25] px-10 py-4 text-[16px] font-semibold text-[#ED1D25]">
+              <button
+                className={`rounded-full px-10 py-4 text-[16px] font-semibold transition ${
+                  activeCta === "demo"
+                    ? "text-brand ring-brand bg-white ring-1"
+                    : "bg-brand hover:bg-brand/90 text-white"
+                }`}
+                onClick={() => setActiveCta("demo")}
+              >
                 Try Demo Account
               </button>
             </div>
@@ -46,7 +61,7 @@ export default function Services() {
         {/* ----------------------------- */}
         <div className="relative mb-28 w-full overflow-visible rounded-3xl">
           {/* Background gradient */}
-          <div className="absolute inset-0 h-[250px] rounded-3xl bg-linear-to-r from-[#A30000] via-[#C60000] to-[#ED1D25]" />
+          <div className="to-brand absolute inset-0 h-[250px] rounded-3xl bg-linear-to-r from-[#A30000] via-[#C60000]" />
 
           <img
             src="/images/services/image 195.png"
@@ -92,7 +107,7 @@ export default function Services() {
               (tab) => (
                 <button
                   key={tab}
-                  className="rounded-full border border-[#ED1D25] px-6 py-2 text-[#ED1D25] transition hover:bg-[#ED1D25] hover:text-white"
+                  className="border-brand text-brand hover:bg-brand rounded-full border px-6 py-2 transition hover:text-white"
                 >
                   {tab}
                 </button>
@@ -111,7 +126,7 @@ export default function Services() {
                   onClick={() => setActiveMarket(idx)}
                   className={`flex h-[74px] w-[286px] cursor-pointer items-center justify-between rounded-[20px] border-[1.7px] p-4 shadow transition ${
                     activeMarket === idx
-                      ? "border-[#ED1D25] bg-[#ED1D25] text-white"
+                      ? "border-brand bg-brand text-white"
                       : "border-gray-200 bg-white text-black"
                   }`}
                 >
@@ -163,13 +178,13 @@ export default function Services() {
                       <span className="text-gray-800">Seller</span>
                       <span className="font-semibold text-gray-900">66.93%</span>
                       <span className="text-gray-500">High:</span>
-                      <span className="font-semibold text-[#ED1D25]">3788.96</span>
+                      <span className="text-brand font-semibold">3788.96</span>
                     </div>
                   </div>
 
                   {/* Browse all markets — placed BELOW, not inside */}
                   <div className="group mt-2 flex cursor-pointer items-center justify-end gap-2">
-                    <span className="text-[12px] font-medium text-[#ED1D25] group-hover:underline">
+                    <span className="text-brand text-[12px] font-medium group-hover:underline">
                       Browse all markets
                     </span>
 
@@ -191,7 +206,7 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="h-[343px] w-[663px] rounded-[20px] border border-[#ED1D25]/20 bg-linear-to-b from-[#FED6D6] to-[#FFFFFF] opacity-100">
+              <div className="border-brand/20 h-[343px] w-[663px] rounded-[20px] border bg-linear-to-b from-[#FED6D6] to-[#FFFFFF] opacity-100">
                 <img src="/images/services/Frame.png" alt="Chart" />
               </div>
               <p className="mt-4 text-center text-sm text-gray-400">
