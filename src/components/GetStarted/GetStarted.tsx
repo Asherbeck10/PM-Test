@@ -24,11 +24,13 @@ export default function GetStarted() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <img
-          src="/images/getStarted/image 372.png"
-          alt="Get Started Illustration"
-          className="pointer-events-none w-[480px] object-contain select-none"
-        />
+        <div className="relative flex-1">
+          <img
+            src="/images/getStarted/image 372.png"
+            alt="Get Started Illustration"
+            className="pointer-events-none absolute -right-11 -bottom-52 w-[520px] max-w-none translate-x-4 translate-y-4 object-contain select-none"
+          />
+        </div>
       </div>
     </section>
   );
@@ -36,11 +38,13 @@ export default function GetStarted() {
 
 function StepBubble({ number, label }: { number: string; label: string }) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-3">
       <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-linear-to-b from-[#FF4F4F] to-[#C40000] text-[20px] font-semibold text-white shadow-[0_0_15px_#FF000060]">
         {number}
       </div>
-      <span className="text-[28px] font-semibold text-white">{label}</span>
+      <span className="text-[24px] leading-tight font-semibold whitespace-nowrap text-white">
+        {label}
+      </span>
     </div>
   );
 }
