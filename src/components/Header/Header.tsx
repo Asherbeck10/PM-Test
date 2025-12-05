@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* MAIN NAV ROW */}
         <div className="flex items-center justify-between px-6 py-4">
           {/* LOGO */}
-          <Logo />
+          <Logo flat />
 
           {/* CENTER NAV MENU */}
           <nav className="hidden items-center gap-10 text-gray-800 md:flex">
