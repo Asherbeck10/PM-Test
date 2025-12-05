@@ -11,7 +11,7 @@ import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div className="mx-auto w-full max-w-[1440px] bg-white">
+    <div className="mx-auto w-full max-w-[1441px] bg-white">
       <Header />
       <Hero />
       <AccessMarkets />

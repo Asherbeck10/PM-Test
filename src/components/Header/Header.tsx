@@ -65,13 +65,6 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 py-4">
           {/* LOGO */}
           <Logo />
-          <div className="order-0 flex items-center gap-3">
-            {/* TEXT */}
-            <div className="leading-[0.9] tracking-tight">
-              <span className="block text-[21px] font-semibold text-black">premier</span>
-              <span className="block text-[21px] font-normal text-black">markets</span>
-            </div>
-          </div>
 
           {/* CENTER NAV MENU */}
           <nav className="hidden items-center gap-10 text-gray-800 md:flex">

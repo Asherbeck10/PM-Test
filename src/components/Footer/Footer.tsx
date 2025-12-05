@@ -2,7 +2,10 @@ import type { ReactNode } from "react";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#000000] pt-10 text-white">
+    <footer
+      className="relative mx-auto min-h-[891px] w-full max-w-[1441px] bg-[#000000] pt-10 text-white opacity-100"
+      style={{ transform: "rotate(0deg)" }}
+    >
       {/* TOP PAYMENT PROVIDERS BAR */}
       <div className="flex items-center justify-center gap-16 border-b border-white/10 py-10">
         <img src="/icons/footer/payPal.png" className="h-10 opacity-80" />
@@ -13,7 +16,7 @@ export default function Footer() {
       </div>
 
       {/* MAIN FOOTER */}
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 px-10 py-16 md:grid-cols-4">
+      <div className="mx-auto grid max-w-[1441px] grid-cols-1 gap-16 px-10 py-16 md:grid-cols-4">
         {/* LEFT COLUMN */}
         <div className="max-w-[350px] space-y-6">
           <img src="/logos/main-logo.svg" className="h-14" />
