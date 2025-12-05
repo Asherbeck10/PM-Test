@@ -15,7 +15,7 @@ export default function Empower() {
       <div className="relative mx-auto mt-16 flex max-w-[1000px] flex-col items-center pb-24">
         <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
           {/* Central Glow */}
-          <div className="h-[450px] w-[450px] rounded-full bg-linear-to-r from-[#ED1D25]/20 to-transparent opacity-30 blur-3xl"></div>
+          <div className="from-brand/20 h-[450px] w-[450px] rounded-full bg-linear-to-r to-transparent opacity-30 blur-3xl"></div>
 
           {/* Dark grid overlay */}
           <div

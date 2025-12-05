@@ -18,7 +18,7 @@ export default function GetStarted() {
           </p>
 
           {/* CTA BUTTON */}
-          <button className="rounded-full bg-white px-10 py-4 text-[20px] font-semibold text-[#ED1D25] transition hover:bg-gray-100">
+          <button className="text-brand rounded-full bg-white px-10 py-4 text-[20px] font-semibold transition hover:bg-gray-100">
             Get Started
           </button>
         </div>

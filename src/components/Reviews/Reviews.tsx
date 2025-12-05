@@ -85,7 +85,7 @@ export default function Reviews() {
       <div className="mx-auto max-w-[1440px] text-center">
         {/* TITLE */}
         <h2 className="mb-4 text-[44px] leading-tight font-bold text-black sm:text-[48px]">
-          What <span className="text-[#ED1D25]">Premier</span> Traders <br /> are saying about us
+          What <span className="text-brand">Premier</span> Traders <br /> are saying about us
         </h2>
 
         <p className="mx-auto mb-10 max-w-[640px] text-[15px] text-gray-500">

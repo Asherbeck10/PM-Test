@@ -27,7 +27,7 @@ export default function Withdrawals() {
     <section className="w-full bg-white px-4 py-28">
       {/* TOP TEXT */}
       <div className="mb-14 text-center">
-        <p className="mb-2 text-[16px] font-medium text-[#ED1D25]">
+        <p className="text-brand mb-2 text-[16px] font-medium">
           Access your funds anytime, anywhere.
         </p>
         <h2 className="text-[48px] font-bold text-black">Seamless Withdrawals</h2>
@@ -102,7 +102,7 @@ export default function Withdrawals() {
                 <span className="block text-[14px] leading-tight font-semibold text-black">
                   John Smith
                 </span>
-                <span className="text-[12px] font-semibold text-[#ED1D25]">
+                <span className="text-brand text-[12px] font-semibold">
                   100% withdrawal completed
                 </span>
               </div>
@@ -147,7 +147,7 @@ function WithdrawalFeature({
         cursor: "url('/images/accessMarkets/image%20216.png') 4 4, pointer",
       }}
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#FF7A7A] to-[#ED1D25] shadow-md">
+      <div className="to-brand flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-br from-[#FF7A7A] shadow-md">
         {iconSrc ? (
           <img src={iconSrc} alt={`${title} icon`} className="h-7 w-7 object-contain" />
         ) : null}

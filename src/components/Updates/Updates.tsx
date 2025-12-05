@@ -4,7 +4,7 @@ export default function Updates() {
       {/* HEADER */}
       <div className="mx-auto mb-12 flex max-w-[1440px] items-center justify-between">
         <div>
-          <p className="text-[16px] font-medium text-[#ED1D25]">Daily Updates</p>
+          <p className="text-brand text-[16px] font-medium">Daily Updates</p>
           <h2 className="text-[48px] font-bold text-black">
             Everything you need to trade the markets
           </h2>
@@ -33,7 +33,7 @@ export default function Updates() {
               support a proposal for…
             </p>
 
-            <button className="text-[14px] font-semibold text-[#ED1D25]">Read more</button>
+            <button className="text-brand text-[14px] font-semibold">Read more</button>
           </div>
         </div>
 

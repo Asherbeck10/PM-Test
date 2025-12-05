@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 export default function Hero() {
+  const [activeButton, setActiveButton] = useState<"primary" | "secondary" | null>(null);
+
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-r from-[#A30000] to-[#ED1D25] text-white">
+    <section className="to-brand relative w-full overflow-hidden bg-linear-to-r from-[#A30000] text-white">
       {/* MAIN HERO CONTENT */}
       <div className="relative mx-auto flex max-w-[1440px] items-center justify-between px-8 py-24">
         {/* LEFT SIDE */}
@@ -20,11 +24,25 @@ export default function Hero() {
 
           {/* BUTTONS */}
           <div className="flex items-center gap-6 pt-8">
-            <button className="rounded-full bg-white px-10 py-4 text-[16px] font-semibold text-[#ED1D25] transition hover:bg-gray-100">
+            <button
+              className={`rounded-full px-10 py-4 text-[16px] font-semibold transition ${
+                activeButton === "primary"
+                  ? "text-brand ring-brand bg-white ring-1"
+                  : "bg-brand hover:bg-brand/90 text-white"
+              }`}
+              onClick={() => setActiveButton("primary")}
+            >
               Start Trading
             </button>
 
-            <button className="rounded-full border border-white px-10 py-4 text-[16px] font-semibold text-white transition hover:bg-white/10">
+            <button
+              className={`rounded-full px-10 py-4 text-[16px] font-semibold transition ${
+                activeButton === "secondary"
+                  ? "text-brand ring-brand bg-white ring-1"
+                  : "bg-brand hover:bg-brand/90 text-white"
+              }`}
+              onClick={() => setActiveButton("secondary")}
+            >
               Try Demo Account
             </button>
           </div>

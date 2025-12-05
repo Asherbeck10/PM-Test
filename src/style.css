@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand: #ed1d25;
+}
+
 html {
   font-family: "Urbanist", sans-serif;
 }

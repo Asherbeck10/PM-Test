@@ -1,79 +1,118 @@
 import { useState } from "react";
-import LanguageSelector from "./LanguageSelector";
+import uaeFlag from "../../assets/icons/England.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [segment, setSegment] = useState<"personal" | "institutional">("personal");
+  const [activeNav, setActiveNav] = useState("Trading");
 
   const toggleMenu = () => setMenuOpen((v) => !v);
 
   return (
-    <header className="w-full border-b-2 border-[#ED1D25] bg-white">
+    <header className="border-brand w-full border-b-2 bg-white">
       <div className="mx-auto flex min-h-[92px] max-w-[1440px] flex-col justify-between">
         {/* TOP STRIP */}
         <div className="hidden items-center justify-between px-6 pt-3 text-[14px] leading-5 font-semibold tracking-[-0.2px] text-[#322F2E] md:flex">
           {/* Left: Personal / Institutional */}
           <div className="flex items-center gap-6">
-            <button className="relative pb-1 font-semibold">
-              Personal
-              <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-[#ED1D25]"></span>
+            <button className="relative pb-1 font-semibold" onClick={() => setSegment("personal")}>
+              <span className={segment === "personal" ? "text-[#1F1F1F]" : "text-[#322F2E]/70"}>
+                Personal
+              </span>
+              <span
+                className={`bg-brand absolute -bottom-0.5 left-0 h-0.5 transition-all duration-200 ${
+                  segment === "personal" ? "w-full opacity-100" : "w-0 opacity-0"
+                }`}
+              ></span>
             </button>
 
-            <button className="text-[#322F2E]/70">Institutional</button>
+            <button
+              className="relative pb-1 font-semibold"
+              onClick={() => setSegment("institutional")}
+            >
+              <span
+                className={segment === "institutional" ? "text-[#1F1F1F]" : "text-[#322F2E]/70"}
+              >
+                Institutional
+              </span>
+              <span
+                className={`bg-brand absolute -bottom-0.5 left-0 h-0.5 transition-all duration-200 ${
+                  segment === "institutional" ? "w-full opacity-100" : "w-0 opacity-0"
+                }`}
+              ></span>
+            </button>
           </div>
 
           {/* Right side (Links + EN) */}
           <div className="flex items-center gap-6">
             {/* Right links */}
             <div className="flex w-[244px] items-center justify-between text-[14px] leading-5 font-semibold tracking-[-0.2px]">
-              <button className="hover:text-[#ED1D25]">WebTrader</button>
-              <button className="hover:text-[#ED1D25]">Support</button>
-              <button className="hover:text-[#ED1D25]">Open Demo</button>
+              <button className="hover:text-brand">WebTrader</button>
+              <button className="hover:text-brand">Support</button>
+              <button className="hover:text-brand">Open Demo</button>
             </div>
 
             {/* Lang selector */}
-            <LanguageSelector />
+            <div className="hover:border-brand hover:text-brand flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-sm font-semibold text-[#322F2E] transition">
+              <img src={uaeFlag} alt="EN" className="h-4 w-6 rounded-sm object-cover" />
+              <span>EN</span>
+            </div>
           </div>
         </div>
 
         {/* MAIN NAV ROW */}
         <div className="flex items-center justify-between px-6 py-4">
           {/* LOGO */}
-          <div className="order-0 flex h-[45.13px] w-40 flex-none items-center gap-3">
-            <div className="h-8 w-8 rounded bg-[#ED1D25]" />
-            <div className="leading-tight">
-              <span className="block text-[20px] font-semibold">premier</span>
-              <span className="block text-[20px] font-normal">markets</span>
+          <div className="order-0 flex items-center gap-3">
+            <div className="flex h-9 w-[52px] rotate-2 items-center justify-center rounded-sm bg-white shadow-sm">
+              <div className="flex -rotate-10 gap-[3px]">
+                <div className="bg-brand h-[25px] w-2.5 rounded-xs"></div>
+                <div className="bg-brand h-5 w-2.5 rounded-xs"></div>
+                <div className="bg-brand h-[15px] w-2.5 rounded-xs"></div>
+              </div>
+            </div>
+
+            {/* TEXT */}
+            <div className="leading-[0.9] tracking-tight">
+              <span className="block text-[21px] font-semibold text-black">premier</span>
+              <span className="block text-[21px] font-normal text-black">markets</span>
             </div>
           </div>
 
           {/* CENTER NAV MENU */}
           <nav className="hidden items-center gap-10 text-gray-800 md:flex">
-            <div className="flex cursor-pointer items-center gap-1">
-              Trading <span>▼</span>
-            </div>
-            <div className="flex cursor-pointer items-center gap-1">
-              Discover <span>▼</span>
-            </div>
-            <div className="flex cursor-pointer items-center gap-1">
-              Promotions <span>▼</span>
-            </div>
-            <div className="flex cursor-pointer items-center gap-1">
-              Company <span>▼</span>
-            </div>
+            {["Trading", "Discover", "Promotions", "Company"].map((item) => (
+              <button
+                key={item}
+                onClick={() => setActiveNav(item)}
+                className={`flex cursor-pointer items-center gap-1 text-[15px] ${
+                  activeNav === item ? "text-brand" : ""
+                }`}
+              >
+                {item} <span className="text-gray-500">⌄</span>
+              </button>
+            ))}
 
             {/* RED LINK */}
-            <div className="flex cursor-pointer items-center gap-2 font-medium text-[#ED1D25]">
+            <button
+              onClick={() => setActiveNav("Partner")}
+              className={`flex cursor-pointer items-center gap-2 font-medium transition ${
+                activeNav === "Partner" ? "text-brand" : "text-gray-800"
+              }`}
+            >
               Partner with us <span>→</span>
-            </div>
+            </button>
           </nav>
 
           {/* RIGHT BUTTONS / HAMBURGER */}
           <div className="flex items-center gap-4">
-            <button className="hidden rounded-full bg-[#ED1D25] px-5 py-2 text-sm font-medium text-white md:inline-flex">
+            <button className="bg-brand hover:bg-brand/85 hidden rounded-full px-5 py-2 text-sm font-medium text-white transition md:inline-flex">
               Register
             </button>
 
-            <div className="hidden h-8 w-8 rounded-full bg-gray-300 md:block" />
+            <div className="hover:bg-brand/15 hover:ring-brand hidden h-8 w-8 items-center justify-center rounded-full bg-gray-300 text-black transition hover:ring-1 md:flex">
+              <img src="/icons/header/User.png" alt="User" className="h-5 w-5 object-contain" />
+            </div>
 
             {/* Mobile menu button */}
             <button
@@ -107,14 +146,40 @@ export default function Navbar() {
         {menuOpen && (
           <div className="mt-2 flex flex-col gap-4 border-t border-gray-200 px-6 pt-4 pb-4 md:hidden">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3 text-sm font-semibold text-[#322F2E]">
-                <button className="relative pb-1 font-semibold">
-                  Personal
-                  <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-[#ED1D25]"></span>
+              <div className="hover:text-brand flex items-center gap-3 text-sm font-semibold text-[#322F2E] transition">
+                <button
+                  className="relative pb-1 font-semibold"
+                  onClick={() => setSegment("personal")}
+                >
+                  <span className={segment === "personal" ? "text-[#1F1F1F]" : "text-[#322F2E]/70"}>
+                    Personal
+                  </span>
+                  <span
+                    className={`bg-brand absolute -bottom-0.5 left-0 h-0.5 transition-all duration-200 ${
+                      segment === "personal" ? "w-full opacity-100" : "w-0 opacity-0"
+                    }`}
+                  ></span>
                 </button>
-                <button className="text-[#322F2E]/70">Institutional</button>
+                <button
+                  className="relative pb-1 font-semibold"
+                  onClick={() => setSegment("institutional")}
+                >
+                  <span
+                    className={segment === "institutional" ? "text-[#1F1F1F]" : "text-[#322F2E]/70"}
+                  >
+                    Institutional
+                  </span>
+                  <span
+                    className={`bg-brand absolute -bottom-0.5 left-0 h-0.5 transition-all duration-200 ${
+                      segment === "institutional" ? "w-full opacity-100" : "w-0 opacity-0"
+                    }`}
+                  ></span>
+                </button>
               </div>
-              <LanguageSelector />
+              <div className="flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-sm font-semibold text-[#322F2E]">
+                <img src={uaeFlag} alt="EN" className="h-4 w-6 rounded-sm object-cover" />
+                <span>EN</span>
+              </div>
             </div>
 
             <div className="grid gap-3 text-[15px] font-medium text-gray-800">
@@ -130,19 +195,19 @@ export default function Navbar() {
               <button className="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3">
                 <span>Company</span> <span>▼</span>
               </button>
-              <button className="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3 text-[#ED1D25]">
+              <button className="text-brand flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3">
                 <span>Partner with us</span> <span>→</span>
               </button>
             </div>
 
             <div className="mt-2 flex flex-col gap-3">
-              <button className="w-full rounded-full bg-[#ED1D25] px-5 py-3 text-sm font-semibold text-white">
+              <button className="bg-brand w-full rounded-full px-5 py-3 text-sm font-semibold text-white">
                 Register
               </button>
               <div className="flex justify-between text-[14px] font-semibold text-[#322F2E]">
-                <button className="hover:text-[#ED1D25]">WebTrader</button>
-                <button className="hover:text-[#ED1D25]">Support</button>
-                <button className="hover:text-[#ED1D25]">Open Demo</button>
+                <button className="hover:text-brand">WebTrader</button>
+                <button className="hover:text-brand">Support</button>
+                <button className="hover:text-brand">Open Demo</button>
               </div>
             </div>
           </div>
