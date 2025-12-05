@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Logo from "../../assets/Logo/Logo";
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-[1441px] grid-cols-1 gap-16 px-10 py-16 md:grid-cols-4">
         {/* LEFT COLUMN */}
         <div className="max-w-[350px] space-y-6">
-          <img src="/logos/main-logo.svg" className="h-14" />
+          <Logo variant="dark" />
 
           <p className="text-[14px] leading-[1.6] text-white/70">
             CFDs are complex instruments and come with a high risk of losing money rapidly due to
