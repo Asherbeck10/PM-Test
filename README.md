@@ -69,7 +69,7 @@ The optimized static assets land in `dist/` and can be deployed to any static ho
 - Single-page landing experience; no routing or auth flows required.
 - Asset set from Figma/public folder is complete and can be referenced with root-relative paths.
 - The brand palette and typography are fixed (Urbanist + provided colors); no theming toggle required.
-- Accessibility expectations focus on semantic structure and reasonable keyboard use for the nav and CTAs, without full WCAG audit scope.
+- Accessibility expectations focus on semantic structure and reasonable keyboard.
 
 ## What I would improve with more time
 
